@@ -1,0 +1,46 @@
+{
+    "users": [
+      {
+        "id": "uuid",
+        "nombre": "string",
+        "apellido": "string",
+        "telefono": "string",
+        "email": "string",
+        "contraseña": "string",
+        "avatar": "string",
+        "banner": "string",
+        "tipo_usuario": "comprador",
+        "ultima_conexion": "date",
+        "ip_inicial": "string",
+        "ips_permitidas": [
+          "string"
+        ],
+        "autenticacion_dos_factores": {
+          "habilitada": "boolean",
+          "metodo": "string"
+        },
+        "configuracion_privacidad": {
+          "publicaciones": {
+            "quien_puede_ver": "string"
+          }
+        },
+        "redes_sociales": {
+          "twitter": "string",
+          "facebook": "string",
+          "instagram": "string",
+          "whatsapp_business": "string"
+        }
+      }
+    ],
+    "notificaciones": [
+      {
+        "id_notificacion": "uuid",
+        "id_usuario": "uuid",
+        "mensaje": "string",
+        "tipo": "string",
+        "fecha": "date",
+        "leida": "boolean"
+      }
+    ]
+  }
+  

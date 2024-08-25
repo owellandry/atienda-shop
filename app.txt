@@ -1,0 +1,12 @@
+Owell ha decidido llamar a su tienda virtual 'atienda' y usará Supabase junto con Next.js para desarrollarla. 'atienda' es una app para que las personas creen su tienda a bajo costo, con un precio mensual de 10 a 20 mil pesos. La base de datos para la aplicación incluirá datos como ID, nombre, apellido, teléfono, correo electrónico, contraseña, avatar, banner, membresía, tienda, código referido y más. Los usuarios normales solo pueden ver sus publicaciones, las de los demás y reaccionar a ellas. Los admins pueden ver y eliminar todo, mientras que los moderadores pueden banear cuentas y publicaciones, pero no eliminarlas. Los planes de membresía incluyen beneficios como límites de publicaciones, verificación, atención especializada, y la posibilidad de tener una tienda independiente si tienen su propio dominio. Los planes de membresía en 'atienda' serán: **Gratis**: 100 publicaciones al mes. **Básico**: 300 publicaciones al mes, con opciones de personalización limitadas. **Pro**: Publicaciones ilimitadas, personalización avanzada, como cambio de fuentes, colores, textos animados, y la posibilidad de añadir dominios personalizados a las tiendas, lo que permite que la URL de la tienda cambie de `atienda.shop/usuario10` a `dominiodelapersona.com`. Las tiendas deben incluir horarios de operación. Los usuarios deben elegir al momento de crear su cuenta si quieren vender o comprar, lo que determinará su membresía y modificaciones. Los usuarios que quieren comprar solo tendrán información básica, mientras que las tiendas tendrán información más detallada.
+
+
+
+
+
+
+
+
+
+
+
