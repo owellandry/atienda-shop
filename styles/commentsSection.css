@@ -1,0 +1,107 @@
+/* commentsSection.css */
+
+/* Animación para el movimiento infinito hacia la izquierda */
+@keyframes marquee-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Animación para el movimiento infinito hacia la derecha */
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Clase para animación infinita hacia la izquierda */
+  .animate-marquee-left-infinite {
+    animation: marquee-left 30s linear infinite;
+ 
+  }
+
+  /* Clase para animación infinita hacia la derecha */
+  .animate-marquee-right-infinite {
+    animation: marquee-right 30s linear infinite;
+  }
+
+  /* Estilo general para las tarjetas de comentarios */
+  .comment-card {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    cursor: pointer;
+    min-width: 100px;
+    display: inline-flex;
+    margin: 0 1rem;
+    overflow: hidden;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    height: 150px;
+  }
+
+  /* Efecto de hover para las tarjetas */
+  .comment-card:hover {
+    transform: scale(1.05); /* Escala las tarjetas al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Añade sombra */
+    background-color: #3f7bc0; /* Cambia el color de fondo en hover */
+  }
+
+ /* Estilo del avatar dentro de las tarjetas */
+.comment-avatar {
+    border-radius: 50%;
+    width: 60px; /* Ajusta el tamaño del avatar */
+    height: 60px; /* Ajusta el tamaño del avatar */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Agrega transición para efectos */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el avatar */
+    border: 3px solid transparent; /* Borde inicial transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Agrega sombra ligera */
+  }
+  
+  /* Efecto de hover para el avatar */
+  .comment-avatar:hover {
+    border: 3px solid #0070f3; /* Añade un borde azul en hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+  }
+  
+
+  /* Contenedor del contenido del comentario */
+  .comment-content {
+    display: flex;
+    flex-direction: column; /* Alinea el texto verticalmente */
+    gap: 0.5rem;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    overflow: hidden; /* Oculta el contenido desbordado */
+  }
+
+  /* Estilo para el nombre del comentario */
+  .comment-username {
+    font-weight: bold;
+  }
+
+  /* Estilo para el texto del comentario */
+  .comment-text {
+    font-size: 0.875rem;
+    color: #333;
+    overflow: hidden; /* Oculta el texto desbordado */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+    white-space: normal; /* Permite que el texto se envuelva y haga saltos de línea */
+    line-height: 1.5; /* Mejora la legibilidad con un interlineado adecuado */
+  }
+
+  /* Padding extra en la tarjeta, si es necesario */
+  .padding {
+    padding: 20px;
+  }

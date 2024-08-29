@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.data-\[focus-visible\=true\]\:outline-offset-2[data-focus-visible="true"] {
+    border-radius: 5px; 
+}
