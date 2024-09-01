@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSession, signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { Button, Image } from '@nextui-org/react';
 import { FaGoogle, FaFacebookF, FaApple } from 'react-icons/fa';
 import '../../../styles/LoginPage.css';
 import ImgLogin from '@/assets/images/LoginImages.jpg';
 
 export default function LoginPage() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push('/'); // Redirige al usuario a la página principal si ya está autenticado
+    }
+  }, [status, router]);
+
   return (
     <div className="login-container">
       <div className="illustration">
@@ -24,7 +35,7 @@ export default function LoginPage() {
           <div className="options">
             <a href="#" className="forgot-password">¿Has olvidado tu contraseña?</a>
           </div>
-          <Button type="submit" className="login-button" color="primary" >
+          <Button onClick={() => signIn('credentials')} type="submit" className="login-button" color="primary" >
             INICIAR SESION
           </Button>
         </form>
@@ -32,9 +43,9 @@ export default function LoginPage() {
           <span>O continuar con</span>
         </div>
         <div className="social-login">
-          <Button className="google"><FaGoogle /></Button>
-          <Button className="facebook"><FaFacebookF /></Button>
-          <Button className="apple"><FaApple /></Button>
+          <Button onClick={() => signIn('google')} className="google"><FaGoogle /></Button>
+          <Button onClick={() => signIn('facebook')} className="facebook"><FaFacebookF /></Button>
+          <Button onClick={() => signIn('apple')} className="apple"><FaApple /></Button>
         </div>
         <div className="signup-link">
           <span>No tienes cuenta? <a href="/register">Regístrate aquí</a></span>

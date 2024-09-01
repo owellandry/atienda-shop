@@ -4,6 +4,7 @@ import Favicon from '../public/favicon.ico';
 
 import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { SessionProvider } from 'next-auth/react';
 import { useRouter } from "next/router";
 
 import { fontSans, fontMono } from "@/config/fonts";
@@ -21,11 +22,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head> 
 
-      <NextUIProvider navigate={router.push}>
-        <NextThemesProvider>
-          <Component {...pageProps} />
-        </NextThemesProvider>
-      </NextUIProvider>
+      <SessionProvider session={pageProps.session}>
+        <NextUIProvider navigate={router.push}>
+          <NextThemesProvider>
+            <Component {...pageProps} />
+          </NextThemesProvider>
+        </NextUIProvider>
+      </SessionProvider>
     </div>
   );
 }
